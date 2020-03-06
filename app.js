@@ -14,7 +14,8 @@ var docSchema = new mongoose.Schema({
     subject_code: String,
     semester: String,
     pdf: String,
-    body: String
+    body: String,
+    author: String
 
 });
 
