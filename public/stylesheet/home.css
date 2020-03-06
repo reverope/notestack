@@ -1,0 +1,72 @@
+/* a:focus,
+a:hover {
+    color: #666666;
+    text-decoration: none;
+    border-bottom: .1rem solid;
+} */
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #333;
+    text-shadow: none;
+    background-color: #fff;
+    border: 0.05rem solid #fff;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-size: cover;
+    color: #2f2f2f;
+    background-image: url("../image/homepage_parralax.jpg");
+    background-attachment: fixed;
+}
+
+.cover-container {
+    max-width: 42em;
+    margin-top: -2rem;
+}
+
+.nav-p {
+    color: #343434;
+    transition: 0.05s all;
+    text-decoration: none;
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 48em) {
+    .masthead-brand {
+        float: left;
+    }
+    .nav-masthead {
+        float: right;
+    }
+}
+
+.cover {
+    padding: 0 1.5rem;
+}
+
+.cover .btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+    color: rgba(255, 255, 255, 0.5);
+}
