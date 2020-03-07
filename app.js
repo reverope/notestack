@@ -18,6 +18,9 @@ var docSchema = new mongoose.Schema({
     author: String
 });
 
+//Create Mongoose Model
+var Doc = mongoose.model("Doc", docSchema);
+
 app.get("/", function(req, res) {
     res.redirect("/home")
 })
@@ -30,120 +33,48 @@ app.get("/home", function(req, res) {
 
 
 //About Page
-app.get("/about",function(req,res){
+app.get("/about", function(req, res) {
     res.render("about.ejs");
 })
 
 //Semester pages
 
-app.get("/sem1", function(req, res) {
-    res.render("sem1.ejs");
+app.get("/:sem", function(req, res) {
+    res.render(req.params.sem + ".ejs");
 });
 
-app.get("/sem2", function(req, res) {
-    res.render("sem2.ejs");
-});
-
-app.get("/sem3", function(req, res) {
-    res.render("sem3.ejs");
-});
-
-app.get("/sem4", function(req, res) {
-    res.render("sem4.ejs");
-});
-
-app.get("/sem5", function(req, res) {
-    res.render("sem5.ejs");
-});
-
-app.get("/sem6", function(req, res) {
-    res.render("sem6.ejs");
-});
-
-app.get("/sem7", function(req, res) {
-    res.render("sem7.ejs");
-});
-
-app.get("/sem8", function(req, res) {
-    res.render("sem8.ejs");
-});
 
 
 
 //Adding new docs to semester
 
-app.get("/sem1/new/:id/:username", function(req, res) {
+app.get("/new/:id/:username", function(req, res) {
     if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
+        res.render("new.ejs");
     } else {
 
-        res.redirect("sem1.ejs");
+        //page to be showm when someone tries to add without permission
+        res.redirect("error.ejs");
     }
 })
 
-app.get("/sem2/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
 
-        res.redirect("sem2.ejs");
-    }
+
+//Post request to submit the form in database
+//CREATE ROUTE
+
+app.post("/:sem", function(req, res) {
+    Doc.create(req.body.doc, function(err, newDoc) {
+        if (err) {
+            res.render("new.ejs");
+        } else {
+            res.redirect("/" + req.params.sem);
+        }
+    })
 })
 
-app.get("/sem3/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
 
-        res.redirect("sem3.ejs");
-    }
-})
-
-app.get("/sem4/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
-
-        res.redirect("sem4.ejs");
-    }
-})
-
-app.get("/sem5/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
-
-        res.redirect("sem5.ejs");
-    }
-})
-
-app.get("/sem6/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
-
-        res.redirect("sem6.ejs");
-    }
-})
-
-app.get("/sem7/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
-
-        res.redirect("sem7.ejs");
-    }
-})
-
-app.get("/sem8/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.redirect("new.ejs");
-    } else {
-
-        res.redirect("sem8.ejs");
-    }
-})
-
+//show and delete routes to be done at later stage
 
 
 
