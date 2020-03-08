@@ -40,7 +40,10 @@ app.get("/about", function(req, res) {
 //Semester pages
 
 app.get("/:sem", function(req, res) {
-    res.render(req.params.sem + ".ejs");
+    Doc.find({ semester: req.params.sem }, function(err, doc) {
+        res.render(req.params.sem + ".ejs", { doc: doc });
+    })
+
 });
 
 
