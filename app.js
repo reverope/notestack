@@ -22,13 +22,13 @@ var docSchema = new mongoose.Schema({
 var Doc = mongoose.model("Doc", docSchema);
 
 app.get("/", function(req, res) {
-    res.redirect("/home")
+    res.redirect("/index")
 })
 
 
 //Home page
 app.get("/home", function(req, res) {
-    res.render("home.ejs");
+    res.render("index.ejs");
 });
 
 
