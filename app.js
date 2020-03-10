@@ -15,7 +15,8 @@ var docSchema = new mongoose.Schema({
     semester: String,
     pdf: String,
     body: String,
-    author: String
+    author: String,
+    dateuploaded: String
 });
 
 //Create Mongoose Model

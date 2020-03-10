@@ -11,121 +11,30 @@
 
     <div class="wrapper no-scrollbar">
 
-        <h4>Computer Science and Engineering</h4>
+        <h4>Computer Science and Engineering [CS101]</h4>
         <div>
             <ul class="hs full">
+                <% doc.forEach(function(Doc){ %>
+                    <li class="item">
+                        <div class="flip">
+                            <div class="front" style="background-image: url(../image/cover/csfront.gif)">
+                                <h1 class="text-shadow">
+                                    <%= Doc.subject_code %>
+                                </h1>
+                                <h1 class="authorname">by
+                                    <%= Doc.author%> <span class="date"><%= Doc.dateuploaded%></span></h1>
 
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/csfront.gif)">
-                            <h1 class="text-shadow">CS101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
+                            </div>
+                            <div class="back">
+                                <h2>About</h2>
+                                <p>Author :
+                                    <%= Doc.dateuploaded%>
 
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% }) %>
             </ul>
         </div>
 
@@ -137,8 +46,10 @@
 
                 <li class="item">
                     <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/ecfront.jpg)">
-                            <h1 class="text-shadow">EC101</hi>
+                        <div class="front" style="background-image: url(../image/cover/ecfront.jpg)">
+                            <h1 class="text-shadow">EC101</h1>
+                            <h1 class="authorname">by Rahul Jain <span class="date">20/03/2020</span></h1>
+
                         </div>
                         <div class="back">
                             <h2>About</h2>
@@ -146,28 +57,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/ecfront.jpg)">
-                            <h1 class="text-shadow">EC101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="item">
-                    <div class="flip">
-                        <div class="front" style="background-image: url(../image/cs/ecfront.jpg)">
-                            <h1 class="text-shadow">EC101</hi>
-                        </div>
-                        <div class="back">
-                            <h2>About</h2>
-                            <p>Author : Rahul Jain</p>
-                        </div>
-                    </div>
-                </li>
+
             </ul>
         </div>
 
