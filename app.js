@@ -13,15 +13,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var docSchema = new mongoose.Schema({
     subject_code: String,
     semester: String,
-    pdf: String,
-    body: String,
+    subject_topic: String,
+    pdfurl: String,
     author: String,
+    authorsection: String,
     dateuploaded: String
 });
 
 //Create Mongoose Model
 var Doc = mongoose.model("Doc", docSchema);
 
+//Default Routing
 app.get("/", function(req, res) {
     res.redirect("/index")
 })
@@ -38,7 +40,6 @@ app.get("/about", function(req, res) {
     res.render("about.ejs");
 })
 
-//Semester pages
 
 app.get("/:sem", function(req, res) {
     Doc.find({ semester: req.params.sem }, function(err, doc) {
@@ -46,8 +47,6 @@ app.get("/:sem", function(req, res) {
     })
 
 });
-
-
 
 
 //Adding new docs to semester

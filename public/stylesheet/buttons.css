@@ -1,6 +1,5 @@
 .btn,
 .btn2,
-.btn3,
 .btn4,
 .btn5,
 .btn6,
@@ -19,6 +18,19 @@
     background-color: #62939a;
 }
 
+.btn3 {
+    margin-top: 3em;
+    padding: .8em 1em;
+    color: #2e2c2d;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 100;
+    background-color: #f7f7f7;
+}
+
 .btn::before {
     content: '';
     position: absolute;
@@ -26,7 +38,7 @@
     left: 0px;
     width: 50%;
     height: 1px;
-    background: #2c2c32;
+    background: #2e2c2d;
     display: block;
     -webkit-transform-origin: left top;
     -ms-transform-origin: left top;
@@ -95,16 +107,22 @@
     -webkit-transform: scaleX(.3);
     transform: scaleX(.3);
     opacity: 0;
-    transition: all .3s
+    transition: all .3s;
+    color: #f7f7f7;
 }
 
 .btn3:hover::before {
     opacity: 1;
-    background-color: #2c2c32;
+    color: #f7f7f7;
+    background-color: #201e1f;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
     transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
     transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+}
+
+.back .btn3:hover {
+    color: #f7f7f7;
 }
 
 
@@ -181,7 +199,7 @@
     position: absolute;
     left: 0px;
     bottom: 0px;
-    z-index: -1;
+    z-index: 100;
     width: 0%;
     height: 1px;
     background: #2c2c32;
