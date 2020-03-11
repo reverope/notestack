@@ -254,7 +254,6 @@ a {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-    border-bottom: 1px dotted;
     outline: 0;
 }
 
@@ -1191,7 +1190,7 @@ button.style3:active,
     input[type="button"],
     button,
     .button {
-        padding: 0;
+        padding: 0 1.5em;
     }
 }
 
@@ -1270,17 +1269,6 @@ button.style3:active,
     }
 }
 
-#banner a {
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-
-#banner a:hover {
-    color: #FFF;
-    border: none;
-}
-
 #banner:before {
     -moz-transition: opacity .2s ease;
     -webkit-transition: opacity .2s ease;
@@ -1322,8 +1310,7 @@ body.is-loading #banner:before {
 /* Main */
 
 #main {
-    padding: 4em 0 2em 0;
-    height: 100vh;
+    padding: 8em 0 8em 0;
 }
 
 @media screen and (max-width: 736px) {
@@ -1348,7 +1335,7 @@ body.is-loading #banner:before {
 /* Footer */
 
 #footer {
-    padding: 4em 0 2em 0;
+    padding: 2em 0 2em 0;
     background-color: #1b1b1f;
     text-align: center;
 }
@@ -1358,37 +1345,15 @@ body.is-loading #banner:before {
     margin: 0 auto;
 }
 
-@media screen and (max-width: 980px) {
-    #footer .inner {
-        width: 75%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #footer .inner {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 736px) {
-    #footer {
-        padding: 3em 0 1em 0;
-    }
-}
-
 
 /* Scroll Snap Code */
-
-.wrapper {
-    display: flex;
-}
 
 .container {
     flex-basis: 50%;
     max-height: 100vh;
     overflow-y: scroll;
     border: 1px solid gray;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 li {
@@ -1396,4 +1361,30 @@ li {
     display: flex;
     flex-flow: column;
     justify-content: center;
+}
+
+.foot {
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1em;
+    background-color: #2c2c32;
+}
+
+.fingers {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    height: 5em;
+    background-color: #82cec6;
+}
+
+.meettheteam {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    padding: 1em;
 }

@@ -57,7 +57,7 @@ app.get("/new/:id/:username", function(req, res) {
         res.render("new.ejs");
     } else {
 
-        //page to be showm when someone tries to add without permission
+        //page to be shown when someone tries to add without permission
         res.redirect("error.ejs");
     }
 })
