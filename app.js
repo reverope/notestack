@@ -54,7 +54,7 @@ app.get("/error", function(req, res) {
 
 
 app.get("/:sem", function(req, res) {
-    Doc.find({ semester: 1 }, function(err, doc) {
+    Doc.find({ semester: req.params.sem }, function(err, doc) {
         res.render(req.params.sem + ".ejs", { doc: doc });
     })
 
@@ -89,8 +89,18 @@ app.post("/:sem", function(req, res) {
     })
 })
 
+//Delete route
+app.delete("/:sem/:id/delete", function(req, res) {
+    Doc.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/" + req.params.sem);
+        } else {
+            res.redirect("/" + req.params.sem);
+        }
+    })
+})
 
-//show and delete routes to be done at later stage
+//show route to be done at later stage
 
 //Bosdike Later stage me nhi abhi karna hai :))))))
 
