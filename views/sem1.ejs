@@ -51,7 +51,7 @@
                 <% doc.forEach(function(Doc){ %>
                     <li class="item">
                         <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/ecfront.jpg)">
+                            <div class="front" style="background-image: url(../image/cover/ecfront.gif)">
                                 <h1 class="text-shadow">
                                     <%= Doc.subject_code %>
                                 </h1>
@@ -84,7 +84,7 @@
                 <% doc.forEach(function(Doc){ %>
                     <li class="item">
                         <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/evsfront.png)">
+                            <div class="front" style="background-image: url(../image/cover/evsfront.gif)">
                                 <h1 class="text-shadow">
                                     <%= Doc.subject_code %>
                                 </h1>
@@ -110,6 +110,72 @@
             </ul>
         </div>
 
+        <hr>
+        <h4>[CH101] Chemistry </h4>
+        <div>
+            <ul class="hs full">
+
+                <% doc.forEach(function(Doc){ %>
+                    <li class="item">
+                        <div class="flip">
+                            <div class="front" style="background-image: url(../image/cover/chfront.gif)">
+                                <h1 class="text-shadow">
+                                    <%= Doc.subject_code %>
+                                </h1>
+                                <h1 class="authorname">
+                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+
+                            </div>
+                            <div class="back">
+                                <h2>About</h2>
+                                <p>Author :
+                                    <%= Doc.author %>
+                                </p>
+                                <p>Section :
+                                    <%= Doc.authorsection %>
+                                </p>
+                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                              </a>
+                            </div>
+                        </div>
+                    </li>
+                    <% }) %>
+
+            </ul>
+        </div>
+        <hr>
+        <h4>[MA101] Mathematics </h4>
+        <div>
+            <ul class="hs full">
+
+                <% doc.forEach(function(Doc){ %>
+                    <li class="item">
+                        <div class="flip">
+                            <div class="front" style="background-image: url(../image/cover/mathfront.gif)">
+                                <h1 class="text-shadow">
+                                    <%= Doc.subject_code %>
+                                </h1>
+                                <h1 class="authorname">
+                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+
+                            </div>
+                            <div class="back">
+                                <h2>About</h2>
+                                <p>Author :
+                                    <%= Doc.author %>
+                                </p>
+                                <p>Section :
+                                    <%= Doc.authorsection %>
+                                </p>
+                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                              </a>
+                            </div>
+                        </div>
+                    </li>
+                    <% }) %>
+
+            </ul>
+        </div>
     </div>
     <hr>
 
