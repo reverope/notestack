@@ -14,6 +14,14 @@ h1 {
     font-size: 1em;
 }
 
+.authorname {
+    margin-top: 9em;
+}
+
+.date {
+    font-size: .7em;
+}
+
 h4 {
     text-align: initial;
 }
@@ -74,6 +82,10 @@ h4 {
     width: 10em;
 }
 
+.back {
+    text-align: initial;
+}
+
 .flip>.front,
 .flip>.back {
     display: block;
@@ -82,7 +94,7 @@ h4 {
     background-size: cover !important;
     background-position: center !important;
     height: 15em;
-    padding: 1em 2em;
+    padding: .2em .8em;
     background: #313131;
     border-radius: 10px;
 }
@@ -99,6 +111,11 @@ h4 {
     grid-template-columns: 10px;
     grid-auto-flow: column;
     overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+    scrollbar-color: #1d1e22;
 }
 
 .hs:before,
@@ -133,4 +150,10 @@ ul {
 
 .no-scrollbar::-webkit-scrollbar {
     display: none;
+}
+
+.wrapper {
+    display: flexbox;
+    grid-template-rows: auto;
+    padding: 0% 10% 0% 10%;
 }
