@@ -40,24 +40,24 @@
             <form action="/sem1" method="POST" id=frm name=frm>
                 <div class="form-group">
                     <label for="sub_code">SUBJECT CODE</label>
-                    <input type="text" class="form-control" id="sub_code">
+                    <input type="text" class="form-control" name="doc[subject_code]" id="sub_code">
                 </div>
                 <div class="form-group ">
                     <label for="SEMESTER">Semester</label>
-                    <input type="number" class="form-control" id="SEMESTER" placeholder="(1-8)" required>
+                    <input type="number" class="form-control" id="SEMESTER" placeholder="(1-8)" name="doc[semester]" required>
                 </div>
 
                 <div class="form-group">
                     <label for="author">Drive Link</label>
-                    <input type="text" class="form-control" id="author">
+                    <input type="text" class="form-control" name="doc[pdfurl]" id="author">
                 </div>
                 <div class="form-group">
                     <label for="author">Body</label>
-                    <input type="text" class="form-control" id="author">
+                    <input type="text" class="form-control" name="doc[subject_topic]" id="author">
                 </div>
                 <div class="form-group">
                     <label for="author">Date Uploaded (DD/MM/YYYY)</label>
-                    <input type="text" class="form-control" id="author">
+                    <input type="text" class="form-control" name="doc[dateuploaded]" id="author">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

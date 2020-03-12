@@ -42,8 +42,8 @@ app.get("/about", function(req, res) {
 
 
 app.get("/:sem", function(req, res) {
-    Doc.find({ semester: req.params.sem }, function(err, docs) {
-        res.render(req.params.sem + ".ejs", { docs: docs });
+    Doc.find({ semester: 1 }, function(err, doc) {
+        res.render(req.params.sem + ".ejs", { doc: doc });
     })
 
 });
@@ -72,6 +72,7 @@ app.post("/:sem", function(req, res) {
             res.render("new.ejs");
         } else {
             res.redirect("/" + req.params.sem);
+            console.log("posted in " + req.params.sem);
         }
     })
 })
