@@ -42,8 +42,8 @@ app.get("/about", function(req, res) {
 
 
 app.get("/:sem", function(req, res) {
-    Doc.find({ semester: req.params.sem }, function(err, doc) {
-        res.render(req.params.sem + ".ejs", { doc: doc });
+    Doc.find({ semester: req.params.sem }, function(err, docs) {
+        res.render(req.params.sem + ".ejs", { docs: docs });
     })
 
 });
