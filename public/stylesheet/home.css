@@ -1377,9 +1377,24 @@ li {
     text-align: center;
 }
 
-.logo {
-    height: 5em;
-    background-color: #82cec6;
+@media screen and (max-width: 480px) {
+    #logo {
+        width: 18em;
+        height: 18em;
+    }
+    .semesterheading {
+        padding-top: 2em;
+    }
+    .foot {
+        padding-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    #logo {
+        width: 821;
+        height: 113;
+    }
 }
 
 .meettheteam {
