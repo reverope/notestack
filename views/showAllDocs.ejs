@@ -18,7 +18,7 @@
                 <th role="columnheader">Author Name</th>
                 <th role="columnheader">Author Section</th>
                 <th role="columnheader">Data Uploaded</th>
-                <th role="columnheader">pdfUrl</th>
+                <th role="columnheader">Mongoose id</th>
 
             </tr>
         </thead>
@@ -44,10 +44,12 @@
                         <%= Doc.dateuploaded%>
                     </td>
                     <td role="cell">
-                        <%= Doc.pdfurl%>
+                        <%= Doc._id%>
                     </td>
                     <td role="cell">
-                        <a href="/<%=Doc.semester%>/<%= Doc.id%>/delete">Delete</a>
+                        <form action="/<%=Doc.semester%>/delete/<%= Doc._id%>?_method=DELETE" id="delete" method="POST">
+                            <button type="submit">Delete</button></form>
+
                     </td>
                 </tr>
                 <% }) %>

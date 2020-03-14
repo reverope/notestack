@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+var methodOverride = require('method-override');
+
 
 
 //configure mongoose
@@ -9,6 +11,7 @@ mongoose.connect("mongodb://localhost/db", { useNewUrlParser: true });
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 var docSchema = new mongoose.Schema({
     subject_code: String,
@@ -91,8 +94,8 @@ app.post("/:sem", function(req, res) {
 })
 
 //Delete route
-app.delete("/:sem/:id/delete", function(req, res) {
-    Doc.findByIdAndRemove(req.params.id, function(err) {
+app.delete("/:sem/delete/:id", function(req, res) {
+    Doc.findByIdAndDelete(req.params.id, function(err) {
         if (err) {
             res.redirect("/" + req.params.sem);
         } else {
