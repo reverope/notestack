@@ -101,20 +101,11 @@ app.delete("/:sem/:id/delete", function(req, res) {
     })
 })
 
-//show route
-app.get("/:sem/:id", function(req, res) {
-    Doc.findById(req.params.id, function(err, foundDoc) {
-        if (err) {
-            res.redirect("/" + req.params.sem);
-        } else {
-            res.render("show.ejs", { doc: foundDoc });
-        }
-    })
-});
+
 
 //Show All page
-app.get("/showAllDocs", function(req, res) {
-    Doc.find({}, function(err, doc) {
+app.get("/:sem/showAllDocs", function(req, res) {
+    Doc.find({ semester: req.params.sem }, function(err, doc) {
         if (err) {
             console.log(err);
         } else {
