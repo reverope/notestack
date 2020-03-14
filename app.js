@@ -53,33 +53,45 @@ app.get("/error", function(req, res) {
     res.render("error.ejs");
 })
 
-//Show All Records
-app.get("/sem/:id/:username/:x/showAllDocs", function(req, res) {
-    Doc.find({ semester: req.params.x }, function(err, doc) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("showAllDocs.ejs", { doc: doc });
-        }
-    })
-})
-
 // Default Route for Semester Pages
 
 app.get("/sem/:x", function(req, res) {
     // x is the semester number
     Doc.find({ semester: req.params.x }, function(err, doc) {
-        res.render("sem" + req.params.x + ".ejs", { doc: doc });
-    })
+        if (err) {
+            res.redirect("/error");
+            console.log(err);
+        } else {
+            res.render("sem" + req.params.x + ".ejs", { doc: doc });
+        }
+    });
+
 });
+
+
+//Show All Records
+app.get("/sem/:x/:id/:username/showAllDocs", function(req, res) {
+    if (req.params.id == "333745" && req.params.username == "admin") {
+        Doc.find({ semester: req.params.x }, function(err, doc) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("showAllDocs.ejs", { doc: doc, number: req.params.x });
+            }
+        })
+    } else {
+        res.redirect("/error");
+    }
+
+})
 
 
 //When we have to add to semester number 'x'
 app.get("/new/:id/:username/sem/:x", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
+    if (req.params.id == "333745" && req.params.username == "admin" && req.params.x >= 0 && req.params.x <= 8) {
         res.render("new.ejs", { number: req.params.x });
     } else {
-        res.redirect("error.ejs");
+        res.redirect("/error");
     }
 })
 
@@ -90,29 +102,24 @@ app.get("/new/:id/:username/sem/:x", function(req, res) {
 
 // Suppose we have to add notes in sem number "x" we use this post route to do so.
 app.post("/:x", function(req, res) {
-    Doc.create(req.body.doc, function(err, newDoc) {
-        if (err) {
-            res.render("new.ejs", { number: req.params.x });
-        } else {
-            res.redirect("/sem/" + req.params.x);
-            console.log("posted in sem" + req.params.x);
-            console.log("id:" + newDoc._id);
-        }
-    })
+    if (req.params.x >= 0 && req.params.x <= 8) {
+        Doc.create(req.body.doc, function(err, newDoc) {
+            if (err) {
+                res.render("new.ejs", { number: req.params.x });
+                console.lod(err);
+            } else {
+                res.redirect("/sem/" + req.params.x);
+                console.log("posted in sem" + req.params.x);
+                console.log("id:" + newDoc._id);
+            }
+        })
+    } else {
+        res.redirect("/error");
+    }
+
 })
 
 
-
-//Show All Records
-app.get("/sem/:x/showAllDocs", function(req, res) {
-    Doc.find({ semester: req.params.x }, function(err, doc) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("showAllDocs.ejs", { doc: doc });
-        }
-    })
-})
 
 
 
@@ -120,11 +127,16 @@ app.get("/sem/:x/showAllDocs", function(req, res) {
 app.delete("/sem/:x/delete/:id", function(req, res) {
     Doc.findByIdAndDelete(req.params.id, function(err) {
         if (err) {
-            res.redirect("/" + req.params.sem);
+            //Redirect to the show all docs page
+            res.redirect("/sem/" + req.params.x + "/showAllDocs");
         } else {
-            res.redirect("/" + req.params.sem);
+            res.redirect("/sem/" + req.params.x);
         }
     })
+})
+
+app.get("*", function(req, res) {
+    res.redirect("/error");
 })
 
 //########################################################
