@@ -40,6 +40,18 @@ app.get("/about", function(req, res) {
     res.render("about.ejs");
 })
 
+//Team Page
+app.get("/meettheteam", function(req, res) {
+    res.render("meettheteam.ejs");
+})
+
+//Error Page
+app.get("/error", function(req, res) {
+    res.render("error.ejs");
+})
+
+
+
 
 app.get("/:sem", function(req, res) {
     Doc.find({ semester: 1 }, function(err, doc) {

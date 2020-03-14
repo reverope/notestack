@@ -11,11 +11,11 @@
 </head>
 
 <body>
-
-
     <div class="wrapper no-scrollbar">
+
         <div class=header>
             <h1 class=head>notestack</h1>
+
             <div class="headmenu">
                 <ul>
                     <li><a href="/index">Home</a></li>
@@ -23,43 +23,48 @@
                         <ul class="dropdown">
                             <li><a href="/sem1">Sem One</a></li>
                             <li><a href="/sem2">Sem Two</a></li>
-
                         </ul>
                     </li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
+
         </div>
+
         <br><br>
         <hr>
+
         <h4>[CS101] Computer Science and Engineering</h4>
         <div>
             <ul class="hs full">
-                <% doc.forEach(function(Doc){ %>
-                    <li class="item">
-                        <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/csfront.gif)">
-                                <h1 class="text-shadow">
-                                    <%= Doc.subject_code %>
-                                </h1>
-                                <h1 class="authorname">
-                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
 
-                            </div>
-                            <div class="back">
-                                <h2>About</h2>
-                                <p>Author :
-                                    <%= Doc.author %>
-                                </p>
-                                <p>Section :
-                                    <%= Doc.authorsection %>
-                                </p>
-                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                <% doc.forEach(function(Doc){ %>
+                    <% if(Doc.subject_code=="CS101"){ %>
+                        <li class="item">
+                            <div class="flip">
+                                <div class="front" style="background-image: url(../image/cover/csfront.gif)">
+                                    <h1 class="text-shadow">
+                                        <%= Doc.subject_code %>
+                                    </h1>
+                                    <h1 class="authorname">
+                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                </div>
+                                <div class="back">
+                                    <h2>About</h2>
+                                    <p>Author :
+                                        <%= Doc.author %>
+                                    </p>
+                                    <p>Section :
+                                        <%= Doc.authorsection %>
+                                    </p>
+                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
                               </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <% }) %>
+                        </li>
+                        <% } %>
+                            <% }) %>
+
             </ul>
         </div>
 
@@ -70,30 +75,31 @@
             <ul class="hs full">
 
                 <% doc.forEach(function(Doc){ %>
-                    <li class="item">
-                        <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/ecfront.gif)">
-                                <h1 class="text-shadow">
-                                    <%= Doc.subject_code %>
-                                </h1>
-                                <h1 class="authorname">
-                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-
-                            </div>
-                            <div class="back">
-                                <h2>About</h2>
-                                <p>Author :
-                                    <%= Doc.author %>
-                                </p>
-                                <p>Section :
-                                    <%= Doc.authorsection %>
-                                </p>
-                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                    <% if(Doc.subject_code=="EC101"){ %>
+                        <li class="item">
+                            <div class="flip">
+                                <div class="front" style="background-image: url(../image/cover/ecfront.gif)">
+                                    <h1 class="text-shadow">
+                                        <%= Doc.subject_code %>
+                                    </h1>
+                                    <h1 class="authorname">
+                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                </div>
+                                <div class="back">
+                                    <h2>About</h2>
+                                    <p>Author :
+                                        <%= Doc.author %>
+                                    </p>
+                                    <p>Section :
+                                        <%= Doc.authorsection %>
+                                    </p>
+                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
                               </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <% }) %>
+                        </li>
+                        <% } %>
+                            <% }) %>
 
             </ul>
         </div>
@@ -103,30 +109,31 @@
             <ul class="hs full">
 
                 <% doc.forEach(function(Doc){ %>
-                    <li class="item">
-                        <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/evsfront.gif)">
-                                <h1 class="text-shadow">
-                                    <%= Doc.subject_code %>
-                                </h1>
-                                <h1 class="authorname">
-                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-
-                            </div>
-                            <div class="back">
-                                <h2>About</h2>
-                                <p>Author :
-                                    <%= Doc.author %>
-                                </p>
-                                <p>Section :
-                                    <%= Doc.authorsection %>
-                                </p>
-                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                    <% if(Doc.subject_code=="CE101"){ %>
+                        <li class="item">
+                            <div class="flip">
+                                <div class="front" style="background-image: url(../image/cover/evsfront.gif)">
+                                    <h1 class="text-shadow">
+                                        <%= Doc.subject_code %>
+                                    </h1>
+                                    <h1 class="authorname">
+                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                </div>
+                                <div class="back">
+                                    <h2>About</h2>
+                                    <p>Author :
+                                        <%= Doc.author %>
+                                    </p>
+                                    <p>Section :
+                                        <%= Doc.authorsection %>
+                                    </p>
+                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
                               </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <% }) %>
+                        </li>
+                        <% } %>
+                            <% }) %>
 
             </ul>
         </div>
@@ -137,30 +144,31 @@
             <ul class="hs full">
 
                 <% doc.forEach(function(Doc){ %>
-                    <li class="item">
-                        <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/chfront.gif)">
-                                <h1 class="text-shadow">
-                                    <%= Doc.subject_code %>
-                                </h1>
-                                <h1 class="authorname">
-                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-
-                            </div>
-                            <div class="back">
-                                <h2>About</h2>
-                                <p>Author :
-                                    <%= Doc.author %>
-                                </p>
-                                <p>Section :
-                                    <%= Doc.authorsection %>
-                                </p>
-                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                    <% if(Doc.subject_code=="CH101"){ %>
+                        <li class="item">
+                            <div class="flip">
+                                <div class="front" style="background-image: url(../image/cover/chfront.gif)">
+                                    <h1 class="text-shadow">
+                                        <%= Doc.subject_code %>
+                                    </h1>
+                                    <h1 class="authorname">
+                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                </div>
+                                <div class="back">
+                                    <h2>About</h2>
+                                    <p>Author :
+                                        <%= Doc.author %>
+                                    </p>
+                                    <p>Section :
+                                        <%= Doc.authorsection %>
+                                    </p>
+                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
                               </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <% }) %>
+                        </li>
+                        <% } %>
+                            <% }) %>
 
             </ul>
         </div>
@@ -170,30 +178,31 @@
             <ul class="hs full">
 
                 <% doc.forEach(function(Doc){ %>
-                    <li class="item">
-                        <div class="flip">
-                            <div class="front" style="background-image: url(../image/cover/mathfront.gif)">
-                                <h1 class="text-shadow">
-                                    <%= Doc.subject_code %>
-                                </h1>
-                                <h1 class="authorname">
-                                    <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-
-                            </div>
-                            <div class="back">
-                                <h2>About</h2>
-                                <p>Author :
-                                    <%= Doc.author %>
-                                </p>
-                                <p>Section :
-                                    <%= Doc.authorsection %>
-                                </p>
-                                <a href="<%= Doc.pdfurl %>" class="btn3">Read More
+                    <% if(Doc.subject_code=="MA101"){ %>
+                        <li class="item">
+                            <div class="flip">
+                                <div class="front" style="background-image: url(../image/cover/mathfront.gif)">
+                                    <h1 class="text-shadow">
+                                        <%= Doc.subject_code %>
+                                    </h1>
+                                    <h1 class="authorname">
+                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                </div>
+                                <div class="back">
+                                    <h2>About</h2>
+                                    <p>Author :
+                                        <%= Doc.author %>
+                                    </p>
+                                    <p>Section :
+                                        <%= Doc.authorsection %>
+                                    </p>
+                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
                               </a>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <% }) %>
+                        </li>
+                        <% } %>
+                            <% }) %>
 
             </ul>
         </div>
