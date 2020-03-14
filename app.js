@@ -53,6 +53,44 @@ app.get("/error", function(req, res) {
     res.render("error.ejs");
 })
 
+// Default Route for Semester Pages
+
+app.get("/sem/:x", function(req, res) {
+    // x is the semester number
+    Doc.find({ semester: req.params.x }, function(err, doc) {
+        res.render("sem" + req.params.x + ".ejs", { doc: doc });
+    })
+});
+
+
+//When we have to add to semester number 'x'
+app.get("/new/:id/:username/sem/:x", function(req, res) {
+    if (req.params.id == "333745" && req.params.username == "admin") {
+        res.render("new.ejs", { number: req.params.x });
+    } else {
+        res.redirect("error.ejs");
+    }
+})
+
+
+//Post request to submit the form in database########################################################
+
+//CREATE ROUTE
+
+app.post("/:x", function(req, res) {
+    Doc.create(req.body.doc, function(err, newDoc) {
+        if (err) {
+            res.render("new.ejs", { number: req.params.x });
+        } else {
+            res.redirect("/sem" + req.params.x);
+            console.log("posted in sem" + req.params.x);
+            console.log("id:" + newDoc._id);
+        }
+    })
+})
+
+
+
 //Show All Records
 app.get("/sem/:x/showAllDocs", function(req, res) {
     Doc.find({ semester: req.params.x }, function(err, doc) {
@@ -64,47 +102,15 @@ app.get("/sem/:x/showAllDocs", function(req, res) {
     })
 })
 
-// Default Route for Semester Pages
 
-app.get("/sem/:x", function(req, res) {
-    // x is the semester number
-    Doc.find({ semester: req.params.x }, function(err, doc) {
-        res.render("sem" + req.params.x + ".ejs", { doc: doc });
-    })
-});
-
-//When we have to add to semester number 'x'
-app.get("/new/:id/:username/sem/:x", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.render("new.ejs", { number: req.params.x });
-    } else {
-        res.redirect("error.ejs");
-    }
-})
-
-//Post request to submit the form in database########################################################
-
-//CREATE ROUTE
-
-app.post("/:x", function(req, res) {
-    Doc.create(req.body.doc, function(err, newDoc) {
-        if (err) {
-            res.render("new.ejs");
-        } else {
-            res.redirect("/sem/" + req.params.x);
-            console.log("posted in " + req.params.x);
-            console.log("id:" + newDoc._id);
-        }
-    })
-})
 
 //Delete route
-app.delete("/:x/delete/:id", function(req, res) {
+app.delete("/sem/:x/delete/:id", function(req, res) {
     Doc.findByIdAndDelete(req.params.id, function(err) {
         if (err) {
-            res.redirect("/sem/" + req.params.x);
+            res.redirect("/" + req.params.sem);
         } else {
-            res.redirect("/sem/" + req.params.x);
+            res.redirect("/" + req.params.sem);
         }
     })
 })
