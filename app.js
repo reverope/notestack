@@ -84,7 +84,7 @@ app.post("/:sem", function(req, res) {
             res.render("new.ejs");
         } else {
             res.redirect("/" + req.params.sem);
-            console.log("posted in " + req.params.sem);
+            console.log("Notes Successfuly save in to database : " + req.params.sem);
         }
     })
 })
