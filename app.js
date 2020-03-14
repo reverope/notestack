@@ -54,7 +54,7 @@ app.get("/error", function(req, res) {
 
 
 app.get("/:sem", function(req, res) {
-    Doc.find({ semester: 1 }, function(err, doc) {
+    Doc.find({ semester: req.params.sem }, function(err, doc) {
         res.render(req.params.sem + ".ejs", { doc: doc });
     })
 
@@ -84,15 +84,47 @@ app.post("/:sem", function(req, res) {
             res.render("new.ejs");
         } else {
             res.redirect("/" + req.params.sem);
-            console.log("Succesfully saved in " + req.params.sem);
+            console.log("posted in " + req.params.sem);
+            console.log("id:" + newDoc._id);
+        }
+    })
+})
+
+//Delete route
+app.delete("/:sem/:id/delete", function(req, res) {
+    Doc.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/" + req.params.sem);
+        } else {
+            res.redirect("/" + req.params.sem);
+        }
+    })
+})
+
+//show route
+app.get("/:sem/:id", function(req, res) {
+    Doc.findById(req.params.id, function(err, foundDoc) {
+        if (err) {
+            res.redirect("/" + req.params.sem);
+        } else {
+            res.render("show.ejs", { doc: foundDoc });
+        }
+    })
+});
+
+//Show All page
+app.get("/showAllDocs", function(req, res) {
+    Doc.find({}, function(err, doc) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("showAllDocs.ejs", { doc: doc });
         }
     })
 })
 
 
-//show and delete routes to be done at later stage
 
-//Bosdike Later stage me nhi abhi karna hai :))))))
 
 
 
