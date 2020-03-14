@@ -54,31 +54,22 @@ app.get("/error", function(req, res) {
 })
 
 
+//When we have to add to sem number 'x'
+app.get("/new/:id/:username/sem/:x", function(req, res) {
+    if (req.params.id == "333745" && req.params.username == "admin") {
+        res.render("new.ejs", { number: req.params.x });
+    } else {
+        res.redirect("error.ejs");
+
+    }
+})
 
 
 app.get("/:sem", function(req, res) {
     Doc.find({ semester: req.params.sem }, function(err, doc) {
-        if (req.params.sem == "new") {
-            res.redirect("/error");
-        } else {
-            res.render(req.params.sem + ".ejs", { doc: doc });
-        }
-
+        res.render(req.params.sem + ".ejs", { doc: doc });
     })
 });
-
-
-//Adding new docs to semester
-
-app.get("/new/:id/:username", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        res.render("new.ejs");
-    } else {
-
-        //page to be shown when someone tries to add without permission
-        res.redirect("error.ejs");
-    }
-})
 
 
 
