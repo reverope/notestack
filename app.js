@@ -94,7 +94,7 @@ app.post("/:x", function(req, res) {
         if (err) {
             res.render("new.ejs", { number: req.params.x });
         } else {
-            res.redirect("/sem" + req.params.x);
+            res.redirect("/sem/" + req.params.x);
             console.log("posted in sem" + req.params.x);
             console.log("id:" + newDoc._id);
         }
