@@ -67,7 +67,12 @@ app.get("/new/:id/:username/sem/:x", function(req, res) {
 
 app.get("/:sem", function(req, res) {
     Doc.find({ semester: req.params.sem }, function(err, doc) {
-        res.render(req.params.sem + ".ejs", { doc: doc });
+        if (req.params.sem === "new") {
+            res.redirect("/error");
+        } else {
+            res.render(req.params.sem + ".ejs", { doc: doc });
+        }
+
     })
 });
 
