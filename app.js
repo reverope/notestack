@@ -54,7 +54,7 @@ app.get("/error", function(req, res) {
 })
 
 //Show All Records
-app.get("/sem/:x/showAllDocs", function(req, res) {
+app.get("/sem/:id/:username/:x/showAllDocs", function(req, res) {
     Doc.find({ semester: req.params.x }, function(err, doc) {
         if (err) {
             console.log(err);
@@ -86,6 +86,7 @@ app.get("/new/:id/:username/sem/:x", function(req, res) {
 
 //CREATE ROUTE
 
+// Suppose we have to add notes in sem number "x" we use this post route to do so.
 app.post("/:x", function(req, res) {
     Doc.create(req.body.doc, function(err, newDoc) {
         if (err) {
