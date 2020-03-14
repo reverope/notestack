@@ -86,25 +86,25 @@ app.get("/new/:id/:username/sem/:x", function(req, res) {
 
 //CREATE ROUTE
 
-app.post("/:sem", function(req, res) {
+app.post("/:x", function(req, res) {
     Doc.create(req.body.doc, function(err, newDoc) {
         if (err) {
             res.render("new.ejs");
         } else {
-            res.redirect("/" + req.params.sem);
-            console.log("posted in " + req.params.sem);
+            res.redirect("/sem/" + req.params.x);
+            console.log("posted in " + req.params.x);
             console.log("id:" + newDoc._id);
         }
     })
 })
 
 //Delete route
-app.delete("/:sem/delete/:id", function(req, res) {
+app.delete("/:x/delete/:id", function(req, res) {
     Doc.findByIdAndDelete(req.params.id, function(err) {
         if (err) {
-            res.redirect("/" + req.params.sem);
+            res.redirect("/sem/" + req.params.x);
         } else {
-            res.redirect("/" + req.params.sem);
+            res.redirect("/sem/" + req.params.x);
         }
     })
 })
