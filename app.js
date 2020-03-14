@@ -65,7 +65,6 @@ app.get("/:sem", function(req, res) {
         }
 
     })
-
 });
 
 
