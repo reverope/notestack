@@ -28,7 +28,7 @@ var Doc = mongoose.model("Doc", docSchema);
 
 //Default Routing
 app.get("/", function(req, res) {
-    res.redirect("/index")
+    res.redirect("/home")
 })
 
 
@@ -53,32 +53,37 @@ app.get("/error", function(req, res) {
     res.render("error.ejs");
 })
 
+//Show All Records
+app.get("/sem/:x/showAllDocs", function(req, res) {
+    Doc.find({ semester: req.params.x }, function(err, doc) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("showAllDocs.ejs", { doc: doc });
+        }
+    })
+})
 
-//When we have to add to sem number 'x'
+// Default Route for Semester Pages
+
+app.get("/sem/:x", function(req, res) {
+    // x is the semester number
+    Doc.find({ semester: req.params.x }, function(err, doc) {
+        res.render("sem" + req.params.x + ".ejs", { doc: doc });
+    })
+});
+
+//When we have to add to semester number 'x'
 app.get("/new/:id/:username/sem/:x", function(req, res) {
     if (req.params.id == "333745" && req.params.username == "admin") {
         res.render("new.ejs", { number: req.params.x });
     } else {
         res.redirect("error.ejs");
-
     }
 })
 
+//Post request to submit the form in database########################################################
 
-app.get("/:sem", function(req, res) {
-    Doc.find({ semester: req.params.sem }, function(err, doc) {
-        if (req.params.sem === "new") {
-            res.redirect("/error");
-        } else {
-            res.render(req.params.sem + ".ejs", { doc: doc });
-        }
-
-    })
-});
-
-
-
-//Post request to submit the form in database
 //CREATE ROUTE
 
 app.post("/:sem", function(req, res) {
@@ -104,23 +109,7 @@ app.delete("/:sem/delete/:id", function(req, res) {
     })
 })
 
-
-
-//Show All page
-app.get("/:sem/showAllDocs", function(req, res) {
-    Doc.find({ semester: req.params.sem }, function(err, doc) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("showAllDocs.ejs", { doc: doc });
-        }
-    })
-})
-
-
-
-
-
+//########################################################
 
 app.listen(3000, function() {
     console.log("SERVER STARTED!!");
