@@ -41,7 +41,18 @@ app.get("/home", function(req, res) {
 //About Page
 app.get("/about", function(req, res) {
     res.render("about.ejs");
-})
+});
+
+//Idea Page
+app.get("/idea", function(req, res) {
+    res.render("idea.ejs");
+});
+
+//Services Page
+app.get("/services", function(req, res) {
+    res.render("services.ejs");
+});
+
 
 //Team Page
 app.get("/meettheteam", function(req, res) {
@@ -59,7 +70,6 @@ app.get("/sem/:x", function(req, res) {
     // x is the semester number
     Doc.find({ semester: req.params.x }, function(err, doc) {
         if (err) {
-            res.redirect("/error");
             console.log(err);
         } else {
             res.render("sem" + req.params.x + ".ejs", { doc: doc });
@@ -98,7 +108,7 @@ app.get("/new/:id/:username/sem/:x", function(req, res) {
 
 //Post request to submit the form in database########################################################
 
-//CREATE ROUTE
+//CREATE ROUTE 
 
 // Suppose we have to add notes in sem number "x" we use this post route to do so.
 app.post("/:x", function(req, res) {
@@ -106,7 +116,7 @@ app.post("/:x", function(req, res) {
         Doc.create(req.body.doc, function(err, newDoc) {
             if (err) {
                 res.render("new.ejs", { number: req.params.x });
-                console.lod(err);
+                console.log(err);
             } else {
                 res.redirect("/sem/" + req.params.x);
                 console.log("posted in sem" + req.params.x);
