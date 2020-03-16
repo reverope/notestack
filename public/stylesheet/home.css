@@ -1310,7 +1310,7 @@ body.is-loading #banner:before {
 /* Main */
 
 #main {
-    padding: 8em 0 8em 0;
+    padding: 8em 0 5em 0;
 }
 
 @media screen and (max-width: 736px) {

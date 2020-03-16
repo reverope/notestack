@@ -15,17 +15,13 @@
     <div class="wrapper no-scrollbar">
 
         <div class=header>
-            <h1 class=head>notestack</h1>
+            <h1 class=head>notestack<span style="font-size: .4em;"> #2</span></h1>
 
             <div class="headmenu">
                 <ul>
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="#">Semester</a>
-                        <ul class="dropdown">
-                            <li><a href="/sem/1">Sem One</a></li>
-                            <li><a href="/sem/2">Sem Two</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/sem/1">Sem One</a></li>
+                    <li><a href="/sem/2">Sem Two</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
@@ -43,7 +39,7 @@
                     <% if(Doc.subject_code=="PH101"){ %>
                         <li class="item">
                             <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/physics.jpg)">
+                                <div class="front" style="background-image: url(../image/cover/physicsfront.gif)">
                                     <h1 class="text-shadow">
                                         <%= Doc.subject_code %>
                                     </h1>
@@ -79,7 +75,7 @@
                     <% if(Doc.subject_code=="EE101"){ %>
                         <li class="item">
                             <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/bee.jpg)">
+                                <div class="front" style="background-image: url(../image/cover/electricalfront.gif)">
                                     <h1 class="text-shadow">
                                         <%= Doc.subject_code %>
                                     </h1>
@@ -113,7 +109,7 @@
                     <% if(Doc.subject_code=="ME101"){ %>
                         <li class="item">
                             <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/mechanics.jpg)">
+                                <div class="front" style="background-image: url(../image/cover/mechfront.gif)">
                                     <h1 class="text-shadow">
                                         <%= Doc.subject_code %>
                                     </h1>
@@ -148,15 +144,15 @@
                     <% if(Doc.subject_code=="HS101"){ %>
                         <li class="item">
                             <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/english.jpg)">
-                                    <h1 class="text-shadow">
+                                <div class="front" style="background-image: url(../image/cover/hsfront.gif)">
+                                    <h1 class="text-shadow" style="color:black">
                                         <%= Doc.subject_code %>
                                     </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
+                                    <h1 class="authorname" style="color:black">
+                                        <%= Doc.subject_topic%> <br><span class="date" style="color:black"> <%= Doc.dateuploaded %></span></h1>
                                 </div>
-                                <div class="back">
-                                    <h2>About</h2>
+                                <div class="back" style="color:black">
+                                    <h2 style="color:#f7f7f7">About</h2>
                                     <p>Author :
                                         <%= Doc.author %>
                                     </p>
@@ -181,7 +177,7 @@
                     <% if(Doc.subject_code=="CE101"){ %>
                         <li class="item">
                             <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/egd.jpg)">
+                                <div class="front" style="background-image: url(../image/cover/egdfront.gif)">
                                     <h1 class="text-shadow">
                                         <%= Doc.subject_code %>
                                     </h1>
