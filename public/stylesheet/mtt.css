@@ -312,8 +312,3 @@ body {
     font-family: "Century Gothic";
     font-weight: 900;
 }
-
-.social-networks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}

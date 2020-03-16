@@ -38,6 +38,10 @@ app.get("/home", function(req, res) {
 });
 
 
+//Under Develepment page
+app.get("/udp", function(req, res) {
+    res.render("udp.ejs");
+});
 //About Page
 app.get("/about", function(req, res) {
     res.render("about.ejs");
