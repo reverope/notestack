@@ -12,7 +12,7 @@ our CRs or the "topper" of our branch/class.
 Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked up this idea of notes serving platform and started working on. Now it is known as "Notestack".
  
  
- ### *This Documentation is only for testing and developing purpose*
+ ### *\*This Documentation is only for testing and developing purpose\**
  
                       
 
