@@ -11,6 +11,13 @@ our CRs or the "topper" of our branch/class.
 
 Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked up this idea of notes serving platform and started working on. Now it is known as "Notestack".
  
+# Roles
+
+| Contributor            | Role                |
+|------------------------|---------------------|
+| Shashwat Priyadarshy   | UX and UI Developer |
+| Biley Roy              | Backend Developer   |
+| Rahul Jain             | Content Developer   |
  # Usage
  
  ## *\*This Documentation is only for testing and developing purpose\**
@@ -42,10 +49,11 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
  
  Id and Username will be only accessible to us so that only we can access and delete any notes.
   
- |id     | password   |
+ |id     | username   |
  |-------|------------|
  |333745 | admin      |
  
+
                       
 
 
