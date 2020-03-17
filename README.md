@@ -17,9 +17,8 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
  
  Note: Port Number : 3000
  
- ### Routings
+ ### Accessible routes to users
  
-#### Get Routes:
 |Routes Description        |  Routelinks                                   |
 |--------------------------|-----------------------------------------------|
 |HomePage Route            |  ``localhost:3000/home  or  localhost:3000/`` |
@@ -28,8 +27,21 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 |MeetTheTeamPage Route     |  ``localhost:3000/meettheteam``               |
 |UnderDevelopmentPage Route|  ``localhost:3000/udp``                       |
 |ErrorPage                 |  ``localhost:3000/error``                     |
+|**SemesterPages Route**   |  ``localhost:3000/sem/(semesternumber)``      |
+|Examples                  |  ``localhost:3000/sem/1``                     |
 
-Semester Pages (format)         : localhost:3000/
+
+ ### Restricted routes
+  
+| Routes Description                   |  Routelinks                                             |
+|--------------------------------------|---------------------------------------------------------|
+| Accessing all notes in semester x    | ``localhost:3000/sem/:x/:id/:username/showAllDocs``     |
+| Adding notes to semester x           | ``localhost:3000/new/:id/:username/sem/:x``             |
+
+
+
+
+
  
  
  
