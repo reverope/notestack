@@ -38,12 +38,12 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 | Accessing all notes in semester x    | ``localhost:3000/sem/:x/:id/:username/showAllDocs``     |
 | Adding notes to semester x           | ``localhost:3000/new/:id/:username/sem/:x``             |
 
-
-
-
-
+## ID and Username
  
- 
+ Id and Username will be only accessible to us so that only we can access and delete any notes.
+ Current |id     | password   |
+         |-------|------------|
+         |333745 | admin      |
  
                       
 
