@@ -63,5 +63,5 @@ Jquery<br>
 Method-Override<br>
 Mongoose<br>
 
-### Basic Dep
-HTML,SCSS,Javascript
+### Basic Dependencies
+HTML |  SCSS | Javascript
