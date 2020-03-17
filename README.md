@@ -20,12 +20,12 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
  ### Routings
  
 #### Get Routes:
-HomePage Route                  : localhost:3000/home  or  localhost:3000/ ;
-AboutPage Route                 : localhost:3000/about
-IdeaPage Route                  : localhost:3000/idea
-MeetTheTeamPage Route           : localhost:3000/meettheteam
-UnderDevelopmentPage Route      : localhost:3000/udp      
-ErrorPage                       : localhost:3000/error
+HomePage Route                  : ``localhost:3000/home  or  localhost:3000/`` ;
+AboutPage Route                 : ``localhost:3000/about``
+IdeaPage Route                  : ``localhost:3000/idea``
+MeetTheTeamPage Route           : ``localhost:3000/meettheteam``
+UnderDevelopmentPage Route      : ``localhost:3000/udp``   
+ErrorPage                       : ``localhost:3000/error``
 
 Semester Pages (format)         : localhost:3000/
  
