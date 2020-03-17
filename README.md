@@ -55,5 +55,13 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 | Biley Roy              | Backend Developer   |
 | Rahul Jain             | Content Developer   |
                       
+# Dependencies
+Body Parser
+EJS
+Express
+Jquery
+Method-Override
+Mongoose
 
-
+### Basic Dep
+HTML,SCSS,Javascript
