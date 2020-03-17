@@ -54,7 +54,7 @@ app.get("/idea", function(req, res) {
 
 //Services Page
 app.get("/services", function(req, res) {
-    res.render("services.ejs");
+    res.render("udp.ejs");
 });
 
 
