@@ -56,12 +56,12 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 | Rahul Jain             | Content Developer   |
                       
 # Dependencies
-Body Parser
-EJS
-Express
-Jquery
-Method-Override
-Mongoose
+Body Parser <br>
+EJS<br>
+Express<br>
+Jquery<br>
+Method-Override<br>
+Mongoose<br>
 
 ### Basic Dep
 HTML,SCSS,Javascript
