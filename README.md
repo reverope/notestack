@@ -41,9 +41,10 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 ## ID and Username
  
  Id and Username will be only accessible to us so that only we can access and delete any notes.
- Current |id     | password   |
-         |-------|------------|
-         |333745 | admin      |
+  
+ |id     | password   |
+ |-------|------------|
+ |333745 | admin      |
  
                       
 
