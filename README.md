@@ -28,7 +28,6 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
 |UnderDevelopmentPage Route|  ``localhost:3000/udp``                       |
 |ErrorPage                 |  ``localhost:3000/error``                     |
 |**SemesterPages Route**   |  ``localhost:3000/sem/(semesternumber)``      |
-|--------------------------|-----------------------------------------------|
 |Examples                  |  ``localhost:3000/sem/1``                     |
 
 
