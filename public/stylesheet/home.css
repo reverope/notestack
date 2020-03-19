@@ -155,10 +155,6 @@ body {
 }
 
 body {
-  -ms-overflow-style: scrollbar;
-}
-
-body {
   transition: all 0.2s;
 }
 
