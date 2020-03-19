@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 
 // mongodb://localhost/db
 //configure mongoose
-mongoose.connect("mongodb+srv://notestackcluster-lmqsh.mongodb.net", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://dbUser:NOTESTACKforever123@notestackcluster-lmqsh.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
