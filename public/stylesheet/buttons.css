@@ -394,10 +394,11 @@
 }
 @media screen and (max-width: 480px) {
   .btn10 {
-      border: 0px;
+    border: 0px;
     border-radius: 0px;
     overflow: unset;
     padding: 1em;
+    margin-bottom: 1em;
   }
 }
 .btn10:hover {
