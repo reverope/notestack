@@ -40,15 +40,15 @@
             <form action="/<%= number %>" method="POST" id=frm name=frm>
                 <div class="form-group">
                     <label for="sub_code">SUBJECT CODE</label>
-                    <input type="text" class="form-control" name="doc[subject_code]" id="sub_code">
+                    <input type="text" class="form-control" name="doc[subject_code]" id="sub_code" maxlength="5">
                 </div>
                 <div class="form-group ">
                     <label for="SEMESTER">Semester (in number)</label>
-                    <input type="text" class="form-control" id="SEMESTER" name="doc[semester]">
+                    <input type="number" class="form-control" id="SEMESTER" name="doc[semester]" maxlength="1">
                 </div>
                 <div class="form-group ">
                     <label for="authorname">Author Name</label>
-                    <input type="text" class="form-control" id="authorname" name="doc[author]">
+                    <input type="text" class="form-control" id="authorname" name="doc[author]" maxlength="11">
                 </div>
                 <div class="form-group ">
                     <label for="authorsec">Author Section</label>
