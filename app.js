@@ -5,9 +5,9 @@ var bodyParser = require("body-parser");
 var methodOverride = require('method-override');
 
 
-
+// mongodb://localhost/db
 //configure mongoose
-mongoose.connect("mongodb://localhost/db", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://notestackcluster-lmqsh.mongodb.net", { useNewUrlParser: true });
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
