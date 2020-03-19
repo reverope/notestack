@@ -1,248 +1,222 @@
 <!DOCTYPE html>
 <html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
+  <head>
     <title>Semester 1</title>
     <link rel="stylesheet" href="../stylesheet/sem1/sem1.css" type=text/css>
-    <link rel="stylesheet" href="../stylesheet/buttons.css" type=text/css>
-    <link rel="stylesheet" href="../stylesheet/home_social.css" type=text/css>
+    <link rel="stylesheet" href="../stylesheet/buttons.css" type=text/css> <link
+    rel="stylesheet" href="../stylesheet/home_social.css" type=text/css>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div class="wrapper no-scrollbar">
+      <div class="header">
+        <h1 class="head">notestack<span style="font-size: .4em;"> #1</span></h1>
 
-        <div class=header>
-            <h1 class=head>notestack<span style="font-size: .4em;"> #1</span></h1>
+        <div class="headmenu">
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/sem/1">Sem One</a></li>
+            <li><a href="/sem/2">Sem Two</a></li>
+            <li><a href="/meettheteam">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
 
+      <br /><br />
+      <hr />
 
-            <div class="headmenu">
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/sem/1">Sem One</a></li>
-                    <li><a href="/sem/2">Sem Two</a></li>
-                    <li><a href="/meettheteam">Contact Us</a></li>
-                </ul>
+      <h4>[CS101] Computer Science and Engineering</h4>
+      <div>
+        <ul class="hs full">
+          <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="CS101"){ %>
+          <li class="item">
+            <div class="flip">
+              <div
+                class="front"
+                style="background-image: url(../image/cover/csfront.gif)"
+              >
+                <h1 class="text-shadow">
+                  <%= Doc.subject_code %>
+                </h1>
+                <h1 class="authorname">
+                  <%= Doc.subject_topic%> <br /><span class="date">
+                    <%= Doc.dateuploaded %></span
+                  >
+                </h1>
+              </div>
+              <div class="back">
+                <h2>About</h2>
+                <p>Author : <%= Doc.author %></p>
+                <p>Section : <%= Doc.authorsection %></p>
+                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
+              </div>
             </div>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
 
-        </div>
+      <h4>[EC101] Electrical Science and Engineering</h4>
+      <div>
+        <ul class="hs full">
+          <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="EC101"){ %>
+          <li class="item">
+            <div class="flip">
+              <div
+                class="front"
+                style="background-image: url(../image/cover/ecfront.gif)"
+              >
+                <h1 class="text-shadow">
+                  <%= Doc.subject_code %>
+                </h1>
+                <h1 class="authorname">
+                  <%= Doc.subject_topic%> <br /><span class="date">
+                    <%= Doc.dateuploaded %></span
+                  >
+                </h1>
+              </div>
+              <div class="back">
+                <h2>About</h2>
+                <p>Author : <%= Doc.author %></p>
+                <p>Section : <%= Doc.authorsection %></p>
+                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
+              </div>
+            </div>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
 
-        <br><br>
-        <hr>
+      <h4>[CE101] Environmental Science and Engineering</h4>
+      <div>
+        <ul class="hs full">
+          <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="CE101"){ %>
+          <li class="item">
+            <div class="flip">
+              <div
+                class="front"
+                style="background-image: url(../image/cover/evsfront.gif)"
+              >
+                <h1 class="text-shadow">
+                  <%= Doc.subject_code %>
+                </h1>
+                <h1 class="authorname">
+                  <%= Doc.subject_topic%> <br /><span class="date">
+                    <%= Doc.dateuploaded %></span
+                  >
+                </h1>
+              </div>
+              <div class="back">
+                <h2>About</h2>
+                <p>Author : <%= Doc.author %></p>
+                <p>Section : <%= Doc.authorsection %></p>
+                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
+              </div>
+            </div>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
 
-        <h4>[CS101] Computer Science and Engineering</h4>
-        <div>
-            <ul class="hs full">
+      <h4>[CH101] Chemistry</h4>
+      <div>
+        <ul class="hs full">
+          <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="CH101"){ %>
+          <li class="item">
+            <div class="flip">
+              <div
+                class="front"
+                style="background-image: url(../image/cover/chfront.gif)"
+              >
+                <h1 class="text-shadow">
+                  <%= Doc.subject_code %>
+                </h1>
+                <h1 class="authorname">
+                  <%= Doc.subject_topic%> <br /><span class="date">
+                    <%= Doc.dateuploaded %></span
+                  >
+                </h1>
+              </div>
+              <div class="back">
+                <h2>About</h2>
+                <p>Author : <%= Doc.author %></p>
+                <p>Section : <%= Doc.authorsection %></p>
+                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
+              </div>
+            </div>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
 
-                <% doc.forEach(function(Doc){ %>
-                    <% if(Doc.subject_code=="CS101"){ %>
-                        <li class="item">
-                            <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/csfront.gif)">
-                                    <h1 class="text-shadow">
-                                        <%= Doc.subject_code %>
-                                    </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-                                </div>
-                                <div class="back">
-                                    <h2>About</h2>
-                                    <p>Author :
-                                        <%= Doc.author %>
-                                    </p>
-                                    <p>Section :
-                                        <%= Doc.authorsection %>
-                                    </p>
-                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
-                              </a>
-                                </div>
-                            </div>
-                        </li>
-                        <% } %>
-                            <% }) %>
-
-            </ul>
-        </div>
-
-
-
-        <h4>[EC101] Electrical Science and Engineering </h4>
-        <div>
-            <ul class="hs full">
-
-                <% doc.forEach(function(Doc){ %>
-                    <% if(Doc.subject_code=="EC101"){ %>
-                        <li class="item">
-                            <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/ecfront.gif)">
-                                    <h1 class="text-shadow">
-                                        <%= Doc.subject_code %>
-                                    </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-                                </div>
-                                <div class="back">
-                                    <h2>About</h2>
-                                    <p>Author :
-                                        <%= Doc.author %>
-                                    </p>
-                                    <p>Section :
-                                        <%= Doc.authorsection %>
-                                    </p>
-                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
-                              </a>
-                                </div>
-                            </div>
-                        </li>
-                        <% } %>
-                            <% }) %>
-
-            </ul>
-        </div>
-
-        <h4>[CE101] Environmental Science and Engineering </h4>
-        <div>
-            <ul class="hs full">
-
-                <% doc.forEach(function(Doc){ %>
-                    <% if(Doc.subject_code=="CE101"){ %>
-                        <li class="item">
-                            <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/evsfront.gif)">
-                                    <h1 class="text-shadow">
-                                        <%= Doc.subject_code %>
-                                    </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-                                </div>
-                                <div class="back">
-                                    <h2>About</h2>
-                                    <p>Author :
-                                        <%= Doc.author %>
-                                    </p>
-                                    <p>Section :
-                                        <%= Doc.authorsection %>
-                                    </p>
-                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
-                              </a>
-                                </div>
-                            </div>
-                        </li>
-                        <% } %>
-                            <% }) %>
-
-            </ul>
-        </div>
-
-
-        <h4>[CH101] Chemistry </h4>
-        <div>
-            <ul class="hs full">
-
-                <% doc.forEach(function(Doc){ %>
-                    <% if(Doc.subject_code=="CH101"){ %>
-                        <li class="item">
-                            <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/chfront.gif)">
-                                    <h1 class="text-shadow">
-                                        <%= Doc.subject_code %>
-                                    </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-                                </div>
-                                <div class="back">
-                                    <h2>About</h2>
-                                    <p>Author :
-                                        <%= Doc.author %>
-                                    </p>
-                                    <p>Section :
-                                        <%= Doc.authorsection %>
-                                    </p>
-                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
-                              </a>
-                                </div>
-                            </div>
-                        </li>
-                        <% } %>
-                            <% }) %>
-
-            </ul>
-        </div>
-
-        <h4>[MA101] Mathematics </h4>
-        <div>
-            <ul class="hs full">
-
-                <% doc.forEach(function(Doc){ %>
-                    <% if(Doc.subject_code=="MA101"){ %>
-                        <li class="item">
-                            <div class="flip">
-                                <div class="front" style="background-image: url(../image/cover/mathfront.gif)">
-                                    <h1 class="text-shadow">
-                                        <%= Doc.subject_code %>
-                                    </h1>
-                                    <h1 class="authorname">
-                                        <%= Doc.subject_topic%> <br><span class="date"> <%= Doc.dateuploaded %></span></h1>
-                                </div>
-                                <div class="back">
-                                    <h2>About</h2>
-                                    <p>Author :
-                                        <%= Doc.author %>
-                                    </p>
-                                    <p>Section :
-                                        <%= Doc.authorsection %>
-                                    </p>
-                                    <a href="<%= Doc.pdfurl %>" class="btn3">Read More
-                              </a>
-                                </div>
-                            </div>
-                        </li>
-                        <% } %>
-                            <% }) %>
-
-            </ul>
-        </div>
-
-
+      <h4>[MA101] Mathematics</h4>
+      <div>
+        <ul class="hs full">
+          <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="MA101"){ %>
+          <li class="item">
+            <div class="flip">
+              <div
+                class="front"
+                style="background-image: url(../image/cover/mathfront.gif)"
+              >
+                <h1 class="text-shadow">
+                  <%= Doc.subject_code %>
+                </h1>
+                <h1 class="authorname">
+                  <%= Doc.subject_topic%> <br /><span class="date">
+                    <%= Doc.dateuploaded %></span
+                  >
+                </h1>
+              </div>
+              <div class="back">
+                <h2>About</h2>
+                <p>Author : <%= Doc.author %></p>
+                <p>Section : <%= Doc.authorsection %></p>
+                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
+              </div>
+            </div>
+          </li>
+          <% } %> <% }) %>
+        </ul>
+      </div>
     </div>
 
-
     <div class="foot">
-        <div class="fingers">
-            <a class="footlink"><b>Semesters</b></a>
-            <a class="footlink" href="/sem/1">1st Sem</a>
-            <a class="footlink" href="/sem/2">2nd Sem</a>
-        </div>
-        <div class=fingers>
-            <a class="footlink"><b>Contact Us</b></a>
+      <div class="fingers">
+        <a class="footlink"><b>Semesters</b></a>
+        <a class="footlink" href="/sem/1">1st Sem</a>
+        <a class="footlink" href="/sem/2">2nd Sem</a>
+      </div>
+      <div class="fingers">
+        <a class="footlink"><b>Contact Us</b></a>
 
-            <ul class="social-networks spin-icon">
-                <br>
+        <ul class="social-networks spin-icon">
+          <br />
 
-                <li><a href="https://www.facebook.com/" class="icon-facebook">Facebook</a></li>
+          <li>
+            <a href="https://www.facebook.com/" class="icon-facebook"
+              >Facebook</a
+            >
+          </li>
 
+          <li>
+            <a href="https://instagram.com" class="icon-instagram">Instagram</a>
+          </li>
+        </ul>
+      </div>
 
-
-                <li><a href="https://instagram.com" class="icon-instagram">Instagram</a></li>
-
-            </ul>
-        </div>
-
-        <div class=fingers>
-            <a class="footlink"><b>About</b></a>
-            <a class="footlink" href="/udp">Idea</a>
-            <a class="footlink" href="/home#main">Services</a>
-        </div>
+      <div class="fingers">
+        <a class="footlink"><b>About</b></a>
+        <a class="footlink" href="/udp">Idea</a>
+        <a class="footlink" href="/home#main">Services</a>
+      </div>
     </div>
 
     <!-- Footer -->
+  </body>
 
-
-
-</body>
-
-<script>
-</script>
-
+  <script></script>
 </html>
