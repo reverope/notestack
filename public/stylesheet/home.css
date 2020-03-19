@@ -1353,11 +1353,12 @@ li {
     display: none;
   }
   .logocontainer {
+      font-weight: 800;
+    margin-top: -0.5em;
     font-family: "Century Gothic";
-    font-size: 3em;
-    display: inline;
+    font-size: 5em;
     opacity: 1;
-    color:  #f7f7f7 ;
+    color: #f7f7f7;
   }
   .semesterheading {
     padding-top: 2em;
