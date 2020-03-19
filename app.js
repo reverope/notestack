@@ -2,25 +2,29 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-var methodOverride = require('method-override');
+var methodOverride = require("method-override");
 
 
-// mongodb://localhost/db
-//configure mongoose
-mongoose.connect("mongodb+srv://dbUser:NOTESTACKforever123@notestackcluster-lmqsh.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
+//Configure Mongoose
 
-app.use(express.static('public'));
+mongoose.connect(
+  "mongodb+srv://dbUser:NOTESTACKforever123@notestackcluster-lmqsh.mongodb.net/test?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
+//mongoose.connect("mongodb://localhost/db",{ useNewUrlParser: true,useUnifiedTopology: true })
+
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 var docSchema = new mongoose.Schema({
-    subject_code: String,
-    semester: String,
-    subject_topic: String,
-    pdfurl: String,
-    author: String,
-    authorsection: String,
-    dateuploaded: String
+  subject_code: String,
+  semester: String,
+  subject_topic: String,
+  pdfurl: String,
+  author: String,
+  authorsection: String,
+  dateuploaded: String
 });
 
 //Create Mongoose Model
@@ -28,136 +32,127 @@ var Doc = mongoose.model("Doc", docSchema);
 
 //Default Routing
 app.get("/", function(req, res) {
-    res.redirect("/home")
-})
-
+  res.redirect("/home");
+});
 
 //Home page
 app.get("/home", function(req, res) {
-    res.render("index.ejs");
+  res.render("index.ejs");
 });
-
 
 //Under Develepment page
 app.get("/udp", function(req, res) {
-    res.render("udp.ejs");
+  res.render("udp.ejs");
 });
 //About Page
 app.get("/about", function(req, res) {
-    res.render("about.ejs");
+  res.render("about.ejs");
 });
 
 //Idea Page
 app.get("/idea", function(req, res) {
-    res.render("idea.ejs");
+  res.render("idea.ejs");
 });
 
 //Services Page
 app.get("/services", function(req, res) {
-    res.render("udp.ejs");
+  res.render("udp.ejs");
 });
-
 
 //Team Page
 app.get("/meettheteam", function(req, res) {
-    res.render("meettheteam.ejs");
-})
+  res.render("meettheteam.ejs");
+});
 
 //Error Page
 app.get("/error", function(req, res) {
-    res.render("error.ejs");
-})
+  res.render("error.ejs");
+});
 
 // Default Route for Semester Pages
 
 app.get("/sem/:x", function(req, res) {
-    // x is the semester number
-    Doc.find({ semester: req.params.x }, function(err, doc) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("sem" + req.params.x + ".ejs", { doc: doc });
-        }
-    });
-
+  // x is the semester number
+  Doc.find({ semester: req.params.x }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("sem" + req.params.x + ".ejs", { doc: doc });
+    }
+  });
 });
-
 
 //Show All Records
 app.get("/sem/:x/:id/:username/showAllDocs", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin") {
-        Doc.find({ semester: req.params.x }, function(err, doc) {
-            if (err) {
-                console.log(err);
-            } else {
-                res.render("showAllDocs.ejs", { doc: doc, number: req.params.x });
-            }
-        })
-    } else {
-        res.redirect("/error");
-    }
-
-})
-
+  if (req.params.id == "333745" && req.params.username == "admin") {
+    Doc.find({ semester: req.params.x }, function(err, doc) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("showAllDocs.ejs", { doc: doc, number: req.params.x });
+      }
+    });
+  } else {
+    res.redirect("/error");
+  }
+});
 
 //When we have to add to semester number 'x'
 app.get("/new/:id/:username/sem/:x", function(req, res) {
-    if (req.params.id == "333745" && req.params.username == "admin" && req.params.x >= 0 && req.params.x <= 8) {
-        res.render("new.ejs", { number: req.params.x });
-    } else {
-        res.redirect("/error");
-    }
-})
-
+  if (
+    req.params.id == "333745" &&
+    req.params.username == "admin" &&
+    req.params.x >= 0 &&
+    req.params.x <= 8
+  ) {
+    res.render("new.ejs", { number: req.params.x });
+  } else {
+    res.redirect("/error");
+  }
+});
 
 //Post request to submit the form in database########################################################
 
-//CREATE ROUTE 
+//CREATE ROUTE
 
 // Suppose we have to add notes in sem number "x" we use this post route to do so.
 app.post("/:x", function(req, res) {
-    if (req.params.x >= 0 && req.params.x <= 8) {
-        Doc.create(req.body.doc, function(err, newDoc) {
-            if (err) {
-                res.render("new.ejs", { number: req.params.x });
-                console.log(err);
-            } else {
-                res.redirect("/sem/" + req.params.x);
-                console.log("posted in sem" + req.params.x);
-                console.log("id:" + newDoc._id);
-            }
-        })
-    } else {
-        res.redirect("/error");
-    }
-
-})
-
-
-
-
+  if (req.params.x >= 0 && req.params.x <= 8) {
+    Doc.create(req.body.doc, function(err, newDoc) {
+      if (err) {
+        res.render("new.ejs", { number: req.params.x });
+        console.log(err);
+      } else {
+        res.redirect("/sem/" + req.params.x);
+        console.log("posted in sem" + req.params.x);
+        console.log("id:" + newDoc._id);
+      }
+    });
+  } else {
+    res.redirect("/error");
+  }
+});
 
 //Delete route
 app.delete("/sem/:x/delete/:id", function(req, res) {
-    Doc.findByIdAndDelete(req.params.id, function(err) {
-        if (err) {
-            //Redirect to the show all docs page
-            res.redirect("/sem/" + req.params.x + "/showAllDocs");
-        } else {
-            res.redirect("/sem/" + req.params.x);
-        }
-    })
-})
+  Doc.findByIdAndDelete(req.params.id, function(err) {
+    if (err) {
+      //Redirect to the show all docs page
+      res.redirect("/sem/" + req.params.x + "/showAllDocs");
+    } else {
+      res.redirect("/sem/" + req.params.x);
+    }
+  });
+});
 
 app.get("*", function(req, res) {
-    res.redirect("/error");
-})
+  res.redirect("/error");
+});
 
 //########################################################
 
-app.listen(process.env.PORT||3000, function() {
-    console.log("SERVER STARTED!!");
+app.listen(process.env.PORT || 3000, function() {
+  console.log("SERVER STARTED!!");
 });
-
 
 // notestack@333745

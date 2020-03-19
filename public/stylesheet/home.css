@@ -155,6 +155,10 @@ body {
 }
 
 body {
+  -ms-overflow-style: scrollbar;
+}
+
+body {
   transition: all 0.2s;
 }
 
@@ -1298,14 +1302,6 @@ body.is-loading #banner:before {
   #main .inner {
     width: 95%;
   }
-
-  .container {
-    scroll-snap-type: none;
-  }
-
-  li {
-    scroll-snap-align: none;
-  }
 }
 
 /* Footer */
@@ -1354,8 +1350,14 @@ li {
 
 @media screen and (max-width: 480px) {
   #logo {
-    width: 18em;
-    height: 18em;
+    display: none;
+  }
+  .logocontainer {
+    font-family: "Century Gothic";
+    font-size: 3em;
+    display: inline;
+    opacity: 1;
+    color:  #f7f7f7 ;
   }
   .semesterheading {
     padding-top: 2em;
@@ -1366,10 +1368,14 @@ li {
 }
 
 @media screen and (min-width: 480px) {
-  #logo {
-    width: 821;
-    height: 113;
+  .logocontainer {
+    opacity: 0;
   }
+}
+
+#logo {
+  width: 921px;
+  height: 113px;
 }
 
 .meettheteam {
