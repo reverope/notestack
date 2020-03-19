@@ -1317,13 +1317,12 @@ body.is-loading #banner:before {
   margin: 0 auto;
 }
 
-/* Scroll Snap Code */
+/* ScrollSnap Code */
 
 .container {
   flex-basis: 50%;
   max-height: 100vh;
   overflow-y: scroll;
-  border: 1px solid gray;
   scroll-snap-type: y proximity;
 }
 
@@ -1353,7 +1352,7 @@ li {
     display: none;
   }
   .logocontainer {
-      font-weight: 800;
+    font-weight: 800;
     margin-top: -0.5em;
     font-family: "Century Gothic";
     font-size: 5em;
@@ -1365,6 +1364,9 @@ li {
   }
   .foot {
     padding-bottom: 2em;
+  }
+  .container {
+    scroll-snap-type: none;
   }
 }
 
