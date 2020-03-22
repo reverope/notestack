@@ -18,6 +18,8 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
  Note: Port Number : 3000
  
  ### Accessible routes to users
+
+ N.B. The restricted routes and semester routes can only be accessed by an authenticated user
  
 |Routes Description        |  Routelinks                                   |
 |--------------------------|-----------------------------------------------|
@@ -62,6 +64,10 @@ Express<br>
 Jquery<br>
 Method-Override<br>
 Mongoose<br>
+passport<br>
+passport-local<br>
+passport-local-mongoose<br>
+express-session<br>
 
 ### Basic Dependencies
-HTML |  SCSS | Javascript
+HTML |  CSS | Javascript  | NODE.JS  |  MONGODB
