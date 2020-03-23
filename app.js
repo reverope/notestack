@@ -89,8 +89,9 @@ app.get("/error", function(req, res) {
 });
 
 //Secret Page 
+//When person will be logged in he will be redirected to home
 app.get("/secret", isLoggedIn, function(req, res) {
-    res.render("secret.ejs");
+    res.render("index.ejs");
 })
 
 //Register page Opening 
