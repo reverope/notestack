@@ -1,6 +1,7 @@
 # Notestack
 
   Notes and Study Material Serving Platform.
+  <a href="http://notestackforyou.herokuapp.com">Visit</a>
   
 # Idea
 
@@ -49,7 +50,7 @@ Thus minds of Shashwat Priyadarshy, Rahul Jain and Biley Roy respectively cooked
  |-------|------------|
  |333745 | admin      |
  
-# Roles
+# Team
 
 | Contributor            | Role                |
 |------------------------|---------------------|
