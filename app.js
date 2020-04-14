@@ -91,7 +91,7 @@ app.get("/error", function(req, res) {
 //Secret Page 
 //When person will be logged in he will be redirected to home
 app.get("/secret", isLoggedIn, function(req, res) {
-    res.render("index.ejs");
+    res.render("sem1.ejs");
 })
 
 //Register page Opening 
@@ -107,7 +107,7 @@ app.post("/register", function(req, res) {
             return res.render("register.ejs");
         }
         passport.authenticate("local")(req, res, function() {
-            res.redirect("/secret");
+            res.redirect("/sem/1");
         })
 
     })
