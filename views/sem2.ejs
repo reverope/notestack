@@ -14,13 +14,16 @@
     <!--This is my comment-->
     <div class="wrapper no-scrollbar">
       <div class="header">
-        <h1 class="head">notestack<span style="font-size: .4em;"> #2</span></h1>
+        <h1 class="head">
+          notestack<span style="font-size: 0.4em;"> #2</span>
+        </h1>
 
         <div class="headmenu">
           <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/sem/1">Sem One</a></li>
             <li><a href="/sem/2">Sem Two</a></li>
+            <li><a href="/logout">Log Out</a></li>
           </ul>
         </div>
       </div>
@@ -36,7 +39,7 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/physicsfront.gif)"
+                style="background-image: url(../image/cover/physicsfront.gif);"
               >
                 <h1 class="text-shadow">
                   <%= Doc.subject_code %>
@@ -67,7 +70,9 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/electricalfront.gif)"
+                style="
+                  background-image: url(../image/cover/electricalfront.gif);
+                "
               >
                 <h1 class="text-shadow">
                   <%= Doc.subject_code %>
@@ -98,7 +103,7 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/mechfront.gif)"
+                style="background-image: url(../image/cover/mechfront.gif);"
               >
                 <h1 class="text-shadow">
                   <%= Doc.subject_code %>
@@ -129,22 +134,22 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/hsfront.gif)"
+                style="background-image: url(../image/cover/hsfront.gif);"
               >
-                <h1 class="text-shadow" style="color:black">
+                <h1 class="text-shadow" style="color: black;">
                   <%= Doc.subject_code %>
                 </h1>
-                <h1 class="authorname" style="color:black">
+                <h1 class="authorname" style="color: black;">
                   <%= Doc.subject_topic%> <br /><span
                     class="date"
-                    style="color:black"
+                    style="color: black;"
                   >
                     <%= Doc.dateuploaded %></span
                   >
                 </h1>
               </div>
-              <div class="back" style="color:black">
-                <h2 style="color:#f7f7f7">About</h2>
+              <div class="back" style="color: black;">
+                <h2 style="color: #f7f7f7;">About</h2>
                 <p>Author : <%= Doc.author %></p>
                 <p>Section : <%= Doc.authorsection %></p>
                 <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
@@ -162,7 +167,7 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/egdfront.gif)"
+                style="background-image: url(../image/cover/egdfront.gif);"
               >
                 <h1 class="text-shadow">
                   <%= Doc.subject_code %>
@@ -193,7 +198,7 @@
             <div class="flip">
               <div
                 class="front"
-                style="background-image: url(../image/cover/maths.jpg)"
+                style="background-image: url(../image/cover/maths.jpg);"
               >
                 <h1 class="text-shadow">
                   <%= Doc.subject_code %>

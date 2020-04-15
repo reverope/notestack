@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>notestack</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="stylesheet/home.css" type=text/css>
-    <link rel="stylesheet" href="stylesheet/home_social.css" type=text/css>
-    <link rel="stylesheet" href="stylesheet/buttons.css" type=text/css>
+    <link rel="stylesheet" href="stylesheet/home.css" type=text/css> <link
+    rel="stylesheet" href="stylesheet/home_social.css" type=text/css> <link
+    rel="stylesheet" href="stylesheet/buttons.css" type=text/css>
     <script type="text/javascript" src="js/main.js"></script>
-</head>
+  </head>
 
-<body id="top">
+  <body id="top">
     <div class="container">
-        <li>
-            <section id="banner">
-                <div class="inner">
-                    <header>
-                        <div class="logocontainer">notestack</div>
-                        <svg id="logo" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <li>
+        <section id="banner">
+          <div class="inner">
+            <header>
+              <div class="logocontainer">notestack</div>
+              <svg id="logo" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M40.536 28.648C50.136 28.648 57.912 31.576 63.864 37.432C69.816 43.192 72.792 51.544 72.792 62.488V109H59.832V64.36C59.832 56.488 57.864 50.488 53.928 46.36C49.992 42.136 44.616 40.024 37.8 40.024C30.888 40.024 25.368 42.184 21.24 46.504C17.208 50.824 15.192 57.112 15.192 65.368V109H2.08801V30.088H15.192V41.32C17.784 37.288 21.288 34.168 25.704 31.96C30.216 29.752 35.16 28.648 40.536 28.648Z"
                   stroke="white"
@@ -67,15 +66,21 @@
                   stroke-width="4"
                 />
               </svg>
-                        <p>
-                            <i><span class="subtitle"
+              <p>
+                <i
+                  ><span class="subtitle"
                     >noun. &nbsp A collection of notes</span
                   ></i
                 >
               </p>
 
-              <a href="/login"><div class="btnx">Login</div></a>
-              <a href="/register"><div class="btnx">Sign Up</div></a>
+              <% if(value==false){ %>
+              <a href="/login"><div class="btnx">Login with Google</div></a>
+              <% }else{%>
+              <span class="subtitle">Welcome to Notestack, <%=name%></span>
+              <% }%>
+
+              <!-- <a href="/register"><div class="btnx">Sign Up</div></a> -->
             </header>
           </div>
         </section>
