@@ -32,6 +32,7 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 //mongoose.connect("mongodb://localhost/db",{ useNewUrlParser: true,useUnifiedTopology: true })
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -40,6 +41,7 @@ passport.deserializeUser((id, done) => {
     done(null, user);
   });
 });
+
 // GoogleSignIn //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 passport.use(
   "google",
