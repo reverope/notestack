@@ -1,0 +1,40 @@
+.mycard {
+  margin: 1rem;
+  height: 220px;
+  width: 150px;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgb(57, 57, 57, 0.2);
+  font-family: "Century Gothic";
+}
+img {
+  height: 100px !important;
+}
+.subjectIcon {
+  height: 50% !important;
+  background-size: cover;
+}
+
+.topicName {
+  padding: 0.8rem !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+.topicAuthor {
+  margin-top: -1rem;
+  padding-left: 0.8rem !important;
+  font-size: 10px;
+}
+
+.topicDate {
+  margin-top: -2rem;
+  padding-left: 0.8rem !important;
+  font-size: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+#pdfLinks {
+  color: black;
+  opacity: 1;
+}

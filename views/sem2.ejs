@@ -5,13 +5,19 @@
 
   <head>
     <title>Semester 2</title>
-    <link rel="stylesheet" href="../stylesheet/sem1/sem1.css" type=text/css>
-    <link rel="stylesheet" href="../stylesheet/buttons.css" type=text/css> <link
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../stylesheet/sem/sem.css" type=text/css> <link
+    rel="stylesheet" href="../stylesheet/cards.css" type=text/css> <link
+    rel="stylesheet" href="../stylesheet/buttons.css" type=text/css> <link
     rel="stylesheet" href="../stylesheet/home_social.css" type=text/css>
   </head>
 
-  <body>
-    <!--This is my comment-->
+  <body style="overflow-x: hidden; text-align: initial;">
     <div class="wrapper no-scrollbar">
       <div class="header">
         <h1 class="head">
@@ -31,191 +37,126 @@
       <br /><br />
       <hr />
 
-      <h4>[PH101] Physics</h4>
+      <p>[PH101] Physics</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="PH101"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="background-image: url(../image/cover/physicsfront.gif);"
-              >
-                <h1 class="text-shadow">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname">
-                  <%= Doc.subject_topic%> <br /><span class="date">
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back">
-                <h2>About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="
+                    background-image: url(../image/cover/physicsfront.gif);
+                  "
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
       </div>
 
-      <h4>[EE101] Basic Electrical Engineering</h4>
+      <p>[EE101] Basic Electrical Engineering</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="EE101"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="
-                  background-image: url(../image/cover/electricalfront.gif);
-                "
-              >
-                <h1 class="text-shadow">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname">
-                  <%= Doc.subject_topic%> <br /><span class="date">
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back">
-                <h2>About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="background-image: url(../image/cover/ecfront.gif);"
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
       </div>
-
-      <h4>[ME101] Mechanics</h4>
+      <p>[ME101] Mechanics</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="ME101"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="background-image: url(../image/cover/mechfront.gif);"
-              >
-                <h1 class="text-shadow">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname">
-                  <%= Doc.subject_topic%> <br /><span class="date">
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back">
-                <h2>About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="background-image: url(../image/cover/mechfront.gif);"
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
       </div>
 
-      <h4>HS[101] Communicative English</h4>
+      <p>HS[101] Communicative English</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="HS101"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="background-image: url(../image/cover/hsfront.gif);"
-              >
-                <h1 class="text-shadow" style="color: black;">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname" style="color: black;">
-                  <%= Doc.subject_topic%> <br /><span
-                    class="date"
-                    style="color: black;"
-                  >
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back" style="color: black;">
-                <h2 style="color: #f7f7f7;">About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="background-image: url(../image/cover/hsfront.gif);"
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
       </div>
-      <h4>CE[101] Engineering Graphics and Design</h4>
+      <p>CE[101] Engineering Graphics and Design</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="CE101"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="background-image: url(../image/cover/egdfront.gif);"
-              >
-                <h1 class="text-shadow">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname">
-                  <%= Doc.subject_topic%> <br /><span class="date">
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back">
-                <h2>About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="background-image: url(../image/cover/egdfront.gif);"
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
       </div>
-
-      <h4>[MA102] Mathematics</h4>
+      <p>[MA102] Mathematics</p>
       <div>
         <ul class="hs full">
           <% doc.forEach(function(Doc){ %> <% if(Doc.subject_code=="MA102"){ %>
           <li class="item">
-            <div class="flip">
-              <div
-                class="front"
-                style="background-image: url(../image/cover/maths.jpg);"
-              >
-                <h1 class="text-shadow">
-                  <%= Doc.subject_code %>
-                </h1>
-                <h1 class="authorname">
-                  <%= Doc.subject_topic%> <br /><span class="date">
-                    <%= Doc.dateuploaded %></span
-                  >
-                </h1>
-              </div>
-              <div class="back">
-                <h2>About</h2>
-                <p>Author : <%= Doc.author %></p>
-                <p>Section : <%= Doc.authorsection %></p>
-                <a href="<%= Doc.pdfurl %>" class="btn3">Read More </a>
-              </div>
-            </div>
+            <a href="<%= Doc.pdfurl %>" id="pdfLinks">
+              <div class="mycard">
+                <div
+                  class="subjectIcon"
+                  style="background-image: url(../image/cover/mathfront.gif);"
+                ></div>
+                <h4 class="topicName"><%= Doc.subject_topic%></h4>
+                <h4 class="topicAuthor">by <%= Doc.author %></h4>
+                <h4 class="topicDate">on <%= Doc.dateuploaded %></h4>
+              </div></a
+            >
           </li>
           <% } %> <% }) %>
         </ul>
@@ -257,5 +198,10 @@
     <!-- Footer -->
   </body>
 
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
   <script></script>
 </html>
