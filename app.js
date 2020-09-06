@@ -10,7 +10,6 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var cookieSession = require("cookie-session");
 var GoogleStrategy = require("passport-google-oauth20");
 require("dotenv").config();
-const key = require("./keys");
 
 var User = require("./models/users");
 
