@@ -9,7 +9,7 @@ var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 var cookieSession = require("cookie-session");
 var GoogleStrategy = require("passport-google-oauth20");
-
+require("dotenv").config();
 const key = require("./keys");
 
 var User = require("./models/users");
@@ -27,10 +27,10 @@ app.use(passport.session());
 
 //Configure Mongoose
 
-mongoose.connect(
-  "mongodb+srv://dbUser:NOTESTACKforever123@notestackcluster-lmqsh.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.DBSTRING, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 //mongoose.connect("mongodb://localhost/db",{ useNewUrlParser: true,useUnifiedTopology: true })
 
 passport.serializeUser((user, done) => {
@@ -48,8 +48,8 @@ passport.use(
   new GoogleStrategy(
     {
       callbackURL: "/google/redirect",
-      clientID: key.google.clientID,
-      clientSecret: key.google.clientSecret,
+      clientID: process.env.CLIENTID,
+      clientSecret: process.env.CLIENTSECRET,
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((currentUser) => {
@@ -220,7 +220,7 @@ app.get("/logout", function (req, res) {
 
 app.get("/sem/:x", authCheck, function (req, res) {
   // x is the semester number
-  console.log("Authentication Status :" + req.isAuthenticated());
+  console.log("Authentication Status : " + req.isAuthenticated());
   Doc.find({ semester: req.params.x }, function (err, doc) {
     if (err) {
       console.log(err);
