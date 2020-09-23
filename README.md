@@ -1,6 +1,6 @@
 # Notestack
 Notes and Study Material Serving Platform.
-<a href="http://notestackforyou.herokuapp.com">Visit</a>
+<a href="https://notestackforyou.herokuapp.com">Visit</a>
   
 # Idea
 
